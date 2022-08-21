@@ -9,5 +9,7 @@ import { GoogleApiService } from './google-api.service';
 export class AppComponent {
   title = 'reenbit';
 
-  constructor(private readonly google: GoogleApiService) {}
+  constructor(
+    // private readonly google: GoogleApiService
+    ) {}
 }
