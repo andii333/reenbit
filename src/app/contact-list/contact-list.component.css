@@ -1,0 +1,183 @@
+.container {
+    background-color: rgb(237, 237, 237);
+    display: flex;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(141, 141, 141);
+    padding-bottom: 2.5vh;
+}
+
+/* ---------------------------------------------------------------------- */
+.left-side {
+    height: 97vh;
+    width: 35vw;
+    border-right: 1px solid rgb(205, 205, 205);
+    border-bottom: 2px solid rgb(174, 174, 174);
+}
+
+.header {
+    padding: 2%;
+    background-color: rgb(237, 237, 237);
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid rgb(205, 205, 205);
+}
+
+.input {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 1%;
+    border-radius: 12px;
+    font-size: 1rem;
+    padding: 2.5%;
+    border: none;
+    background-color: rgb(250, 250, 250);
+    outline: none;
+
+}
+
+.input::placeholder {
+    color: rgb(141, 141, 141);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.main {
+    height: 77%;
+    overflow: hidden;
+    position: relative;
+    background-color: rgb(252, 252, 252);
+}
+
+.in-main {
+    position: absolute;
+    top: 6vh;
+    bottom: 0;
+    left: 0;
+    right: -17px;
+    overflow-y: scroll;
+}
+
+
+.contact-image {
+    width: 5vw;
+    height: 5vw;
+    position: relative;
+}
+
+.image {
+    margin: 3%;
+    width: 4vw;
+    height: 4vw;
+    object-fit: cover;
+    border: none;
+    border-radius: 50%;
+}
+
+.circle {
+    width: 1vw;
+    height: 1vw;
+    border-radius: 50%;
+    border: 1px solid green;
+    position: absolute;
+    right: 15%;
+    bottom: 5%;
+}
+
+.tick {
+    width: 0.8vw;
+    height: 0.6vw;
+    border-top: 1px solid green;
+    border-right: 1px solid green;
+    transform: rotate(120deg);
+    position: absolute;
+    right: 18%;
+    bottom: 15%;
+}
+
+.h1 {
+    color: rgb(0, 204, 255);
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin: 4% 0 4% 6%;
+}
+
+.contact {
+    border-bottom: 1px solid rgb(205, 205, 205);
+    padding: 3%;
+    display: flex;
+    cursor: pointer;
+}
+
+.contact:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.contact-info {
+    margin-left: 5%;
+    width: 59%;
+}
+
+.contact-name {
+    font-size: 1.2rem;
+    color: black;
+    margin: 1%;
+}
+
+.message {
+    margin: 0;
+}
+
+.date {
+    font-size: 1rem;
+}
+
+/* _____________________________________________________________________________ */
+
+.right-side {
+    width: 65vw;
+    border-bottom: 2px solid rgb(174, 174, 174);
+}
+
+/* ------------------------------------------------------------------------------------ */
+
+@media screen and (max-width: 768px) {
+
+    .left-side,
+    .right-side {
+        width: 100vw;
+    }
+
+   .right-side, .left-side.inactive{
+    display: none;
+}
+   .left-side, .right-side.active{
+    display: block;
+}
+
+.contact-image {
+    width: 15vw;
+    height: 15vw;
+    position: relative;
+}
+
+.image {
+    margin: 1%;
+    width: 12vw;
+    height: 12vw;
+    object-fit: cover;
+    border: none;
+    border-radius: 50%;
+}
+
+.circle {
+    width: 3vw;
+    height: 3vw;
+}
+
+.tick {
+    width: 2vw;
+    height: 2vw;
+    right: 25%;
+}
+}

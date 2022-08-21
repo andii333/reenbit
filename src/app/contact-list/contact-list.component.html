@@ -1,0 +1,40 @@
+<div class="container">
+
+    <div class="left-side" 
+     routerLink="/contact-chat" routerLinkActive="inactive">
+        <header class="header">
+            <picture class="contact-image">
+                <img src="../assets/avatar.jpg" alt="avatar photo" class="image">
+                <div class="circle"></div>
+                <div class="tick"></div>
+            </picture>
+            <input type="text" placeholder=" 🔍  Search or start new chat" class="input" [(ngModel)]="letter">
+        </header>
+
+        <main class="main">
+            <h1 class="h1">Chats</h1>
+            <div class="in-main">
+                <ng-container *ngFor="let contact of contacts">
+                    <div class="contact" *ngIf="showContact(contact)" (click)="openChat(contact)">
+                        <picture class="contact-image">
+                            <img src="../assets/{{contact.name}}.jpg" alt="{{contact.name}} photo" class="image">
+                            <div class="circle"></div>
+                            <div class="tick"></div>
+                        </picture>
+                        <div class="contact-info">
+                            <p class="contact-name">{{contact.name}}</p>
+                            <p class="message">{{contact.text}}</p>
+                        </div>
+                        <div class="date">
+                            <p>{{contact.date | date: 'MMM dd, yyyy'}}</p>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </main>
+    </div>
+    <div class="right-side" 
+    routerLink="/contact-chat" routerLinkActive="active">
+        <router-outlet></router-outlet>
+    </div>
+</div>
