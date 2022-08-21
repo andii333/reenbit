@@ -42,7 +42,7 @@ export class ContactChatComponent implements OnInit {
       this.functions.toLocalStorage(`${this.contact.name}`, this.messages);
       this.message = "";
 this.service.updateContacts()
-      this.functions.getAnswer(this.contact.name).pipe(delay(3000)).subscribe(answer => {
+      this.functions.getAnswer(this.contact.name).pipe(delay(10000)).subscribe(answer => {
         if (answer.name === this.contact.name) {
           this.messages.push(new Message(answer.answer, this.date, "white"));
           this.functions.toLocalStorage(answer.name, this.messages);
