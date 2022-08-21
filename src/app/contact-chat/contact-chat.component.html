@@ -3,7 +3,7 @@
 
         <div class="contact-image">
             <picture>
-                <img src="../../assets/{{contact.name}}.jpg" alt="{{contact.name}} photo" class="image">
+                <img src="assets/{{contact.name}}.jpg" alt="{{contact.name}} photo" class="image">
             </picture>
             <div class="circle"></div>
             <div class="tick"></div>
@@ -18,7 +18,7 @@
             <div [ngClass]="{'text-contact-dark': talk.type==='dark', 'text-contact-white': talk.type==='white'}"
              *ngFor="let talk of messages" #talk>
                 <picture *ngIf="talk.type==='dark'">
-                    <img src="../../assets/{{contact.name}}.jpg" alt="{{contact.name}} photo" class="image">
+                    <img src="assets/{{contact.name}}.jpg" alt="{{contact.name}} photo" class="image">
                 </picture>
                 <div class="text-box">
                     <p [ngClass]="{'text-line-dark': talk.type==='dark', 'text-line-white': talk.type==='white'}">

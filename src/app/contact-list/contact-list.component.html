@@ -4,7 +4,7 @@
      routerLink="/contact-chat" routerLinkActive="inactive">
         <header class="header">
             <picture class="contact-image">
-                <img src="../assets/avatar.jpg" alt="avatar photo" class="image">
+                <img src="assets/avatar.jpg" alt="avatar photo" class="image">
                 <div class="circle"></div>
                 <div class="tick"></div>
             </picture>
@@ -17,7 +17,7 @@
                 <ng-container *ngFor="let contact of contacts">
                     <div class="contact" *ngIf="showContact(contact)" (click)="openChat(contact)">
                         <picture class="contact-image">
-                            <img src="../assets/{{contact.name}}.jpg" alt="{{contact.name}} photo" class="image">
+                            <img src="assets/{{contact.name}}.jpg" alt="{{contact.name}} photo" class="image">
                             <div class="circle"></div>
                             <div class="tick"></div>
                         </picture>
