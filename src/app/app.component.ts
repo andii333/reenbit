@@ -10,6 +10,6 @@ export class AppComponent {
   title = 'reenbit';
 
   constructor(
-    // private readonly google: GoogleApiService
+    private readonly google: GoogleApiService
     ) {}
 }
