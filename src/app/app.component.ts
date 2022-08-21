@@ -23,7 +23,10 @@ export class AppComponent {
       messages.push(new Message('Hello',new Date(), 'dark'))
       messages.push(new Message('Hi',new Date(), 'white'))
       messages.push(new Message('How are You?',new Date(), 'dark'))
+<<<<<<< HEAD
       messages.push(new Message('I am good',new Date(), 'white'))
+=======
+>>>>>>> 32b24fbda5721b527317ec6b245ec8e9785db37c
       this.functions.toLocalStorage('Alice Freeman', messages)
       this.functions.toLocalStorage('Iniesta', messages)
       this.functions.toLocalStorage('Roberto', messages)
