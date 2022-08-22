@@ -16,7 +16,7 @@
     <main class="main">
         <div class="my-text" >
             <div [ngClass]="{'text-contact-dark': talk.type==='dark', 'text-contact-white': talk.type==='white'}"
-             *ngFor = "let talk of messages" #talk >
+             *ngFor = "let talk of messages" >
                 <picture *ngIf="talk.type==='dark'">
                     <img src="assets/{{contact.name}}.jpg" alt="{{contact.name}} photo" class="image">
                 </picture>

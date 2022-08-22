@@ -42,7 +42,7 @@
 }
 
 .main {
-    height: 85%;
+    height: 77%;
     overflow: hidden;
     position: relative;
     background-color: rgb(252, 252, 252);
@@ -74,24 +74,24 @@
 }
 
 .circle {
-    width: 1vw;
-    height: 1vw;
+    width: 0.8vw;
+    height: 0.8vw;
     border-radius: 50%;
     border: 1px solid green;
     position: absolute;
-    right: 15%;
-    bottom: 5%;
+    right: 18%;
+    bottom: 11%;
 }
 
 .tick {
-    width: 0.8vw;
+    width: 0.4vw;
     height: 0.6vw;
     border-top: 1px solid green;
     border-right: 1px solid green;
     transform: rotate(120deg);
     position: absolute;
-    right: 18%;
-    bottom: 15%;
+    right: 25%;
+    bottom: 18%;
 }
 
 .h1 {
@@ -148,36 +148,42 @@
         width: 100vw;
     }
 
-   .right-side, .left-side.inactive{
-    display: none;
-}
-   .left-side, .right-side.active{
-    display: block;
-}
+    .right-side,
+    .left-side.inactive {
+        display: none;
+    }
 
-.contact-image {
-    width: 15vw;
-    height: 15vw;
-    position: relative;
-}
+    .left-side,
+    .right-side.active {
+        display: block;
+    }
 
-.image {
-    margin: 1%;
-    width: 12vw;
-    height: 12vw;
-    object-fit: cover;
-    border: none;
-    border-radius: 50%;
-}
+    .contact-image {
+        width: 15vw;
+        height: 15vw;
+        position: relative;
+    }
 
-.circle {
-    width: 3vw;
-    height: 3vw;
-}
+    .image {
+        margin: 1%;
+        width: 12vw;
+        height: 12vw;
+        object-fit: cover;
+        border: none;
+        border-radius: 50%;
+    }
 
-.tick {
-    width: 2vw;
-    height: 2vw;
-    right: 25%;
-}
+    .circle {
+        width: 2vw;
+        height: 2vw;
+        right: 25%;
+        bottom: 18%;
+    }
+
+    .tick {
+        width: 1vw;
+        height: 1.3vw;
+        right: 30%;
+        bottom: 23%;
+    }
 }

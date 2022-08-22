@@ -12,9 +12,9 @@ import { FunctionsService } from '../functions.service';
 export class ContactListComponent implements OnInit {
 
   message: string;
-  contacts: Contact[] ;
-  contact: Contact ;
-  letter:string ='';
+  contacts: Contact[];
+  contact: Contact;
+  letter: string = '';
 
   constructor(public service: ContactsService,
     public functions: FunctionsService,
@@ -23,22 +23,22 @@ export class ContactListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.service.contactList.subscribe(contacts => {this.contacts = contacts});
-  } 
+    this.service.contactList.subscribe(contacts => { this.contacts = contacts });
+  }
 
-  openChat(contact:Contact) {
+  openChat(contact: Contact) {
     this.contact = contact;
     this.service.chooseContact.next(contact);
     this.router.navigate(["contact-chat"])
     this.letter = '';
   }
 
-  showContact(contact:Contact){
-    if (this.letter.trim())  {
-     return contact.name.toLowerCase().includes(this.letter.toLowerCase())
-   } else {
-     return true
-   }
+  showContact(contact: Contact) {
+    if (this.letter.trim()) {
+      return contact.name.toLowerCase().includes(this.letter.toLowerCase())
+    } else {
+      return true
+    }
   }
 
 }

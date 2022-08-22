@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { delay } from 'rxjs';
 import { Contact } from '../contact';
 import { ContactsService } from '../contacts.service';
@@ -11,6 +11,7 @@ import { Message } from './messages';
   styleUrls: ['./contact-chat.component.css']
 })
 export class ContactChatComponent implements OnInit {
+
   contact: Contact;
   messages: Message[] = [];
   message: string = "";
@@ -21,7 +22,7 @@ export class ContactChatComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    
+
     this.service.chooseContact.subscribe(contact => {
       this.contact = contact;
 
@@ -56,7 +57,5 @@ export class ContactChatComponent implements OnInit {
       }
       )
     }
-   
   }
-  
 }
