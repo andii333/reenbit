@@ -136,6 +136,8 @@
     border: none;
     background-color: rgb(252, 252, 252);
     outline: none;
+    resize: none;
+    overflow-y: hidden;
 }
 
 .input::placeholder {
