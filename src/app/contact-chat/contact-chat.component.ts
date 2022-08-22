@@ -38,13 +38,13 @@ export class ContactChatComponent implements OnInit {
 
   send() {
     if (this.message.trim()) {
-      this.messages.push(new Message(this.message, this.date, "dark"));
+      this.messages.push(new Message(this.message, this.date, "white"));
       this.functions.toLocalStorage(`${this.contact.name}`, this.messages);
       this.message = "";
 this.service.updateContacts()
       this.functions.getAnswer(this.contact.name).pipe(delay(10000)).subscribe(answer => {
         if (answer.name === this.contact.name) {
-          this.messages.push(new Message(answer.answer, this.date, "white"));
+          this.messages.push(new Message(answer.answer, this.date, "dark"));
           this.functions.toLocalStorage(answer.name, this.messages);
         } else {
           let messages = [];
@@ -52,7 +52,7 @@ this.service.updateContacts()
             messages = this.functions.getLocalStorage(answer.name).map((m: any) =>
               new Message(m.text, m.date, m.type));
           }
-          messages.push(new Message(answer.answer, this.date, "white"));
+          messages.push(new Message(answer.answer, this.date, "dark"));
           this.functions.toLocalStorage(answer.name, messages);
         }
         this.service.updateContacts()

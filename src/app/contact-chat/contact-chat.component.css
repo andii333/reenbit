@@ -96,7 +96,7 @@ position: absolute;
 }
 
 .text-line-white {
-    margin: 0 5% 0 0 ;
+    margin: 0 2vw 0 0 ;
     padding: 0.8rem;
     color: rgb(0, 0, 0);
     background-color: rgb(237, 237, 237);
@@ -106,7 +106,7 @@ position: absolute;
 .date-line-white {
     font-size: 0.9rem;
     text-align: end;
-    margin: 0 10% 0 0;
+    margin: 0 2vw 0 0;
 }
 
 .date-line-dark {
@@ -117,7 +117,7 @@ position: absolute;
 
 .footer {
     background-color: rgb(237, 237, 237);
-    height: fit-content;
+    height: min-content;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -196,7 +196,10 @@ position: absolute;
     height: 1.3vw;
     right: 25%;
 }
-.main {
-    
+.text-line-white {
+    margin: 0 5vw 0 0;
 }
+    .date-line-white {
+    margin: 0 5vw 0 0;
+    }
 }

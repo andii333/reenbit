@@ -13,7 +13,7 @@ export class AppComponent {
 
   constructor(
     public functions: FunctionsService,
-    // private readonly google: GoogleApiService
+    private readonly google: GoogleApiService
     ) {
       this.addLocalstorage()
     }

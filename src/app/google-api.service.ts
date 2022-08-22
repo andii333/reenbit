@@ -4,7 +4,7 @@ import { AuthConfig, OAuthService } from 'angular-oauth2-oidc';
 const oAuthConfig: AuthConfig = {
   issuer: 'https://accounts.google.com',
   strictDiscoveryDocumentValidation:false,
-  redirectUri:window.location.origin,
+  redirectUri:"https://andii333.github.io/chat/",
   clientId:'742690112560-d85klpa5mm8926epf3i274ainelg7hpn.apps.googleusercontent.com',
   scope:'openid profile email'
 }
