@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit} from '@angular/core';
 import { delay } from 'rxjs';
 import { Contact } from '../contact';
 import { ContactsService } from '../contacts.service';
@@ -13,18 +12,16 @@ import { Message } from './messages';
 })
 export class ContactChatComponent implements OnInit {
   contact: Contact;
-  conversation: any;
-  date = new Date;
   messages: Message[] = [];
   message: string = "";
-  res: any
+  res: any;
 
   constructor(public service: ContactsService,
     public functions: FunctionsService,
-    private router: Router
   ) { }
 
   ngOnInit(): void {
+    
     this.service.chooseContact.subscribe(contact => {
       this.contact = contact;
 
@@ -38,13 +35,13 @@ export class ContactChatComponent implements OnInit {
 
   send() {
     if (this.message.trim()) {
-      this.messages.push(new Message(this.message, this.date, "white"));
+      this.messages.push(new Message(this.message, new Date(), "white"));
       this.functions.toLocalStorage(`${this.contact.name}`, this.messages);
       this.message = "";
-this.service.updateContacts()
+      this.service.updateContacts()
       this.functions.getAnswer(this.contact.name).pipe(delay(10000)).subscribe(answer => {
         if (answer.name === this.contact.name) {
-          this.messages.push(new Message(answer.answer, this.date, "dark"));
+          this.messages.push(new Message(answer.answer, new Date(), "dark"));
           this.functions.toLocalStorage(answer.name, this.messages);
         } else {
           let messages = [];
@@ -52,12 +49,14 @@ this.service.updateContacts()
             messages = this.functions.getLocalStorage(answer.name).map((m: any) =>
               new Message(m.text, m.date, m.type));
           }
-          messages.push(new Message(answer.answer, this.date, "dark"));
+          messages.push(new Message(answer.answer, new Date(), "dark"));
           this.functions.toLocalStorage(answer.name, messages);
         }
         this.service.updateContacts()
       }
       )
     }
+   
   }
+  
 }

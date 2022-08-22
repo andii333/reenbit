@@ -1,4 +1,4 @@
-<div class="container" *ngIf="contact">
+<div class="container" *ngIf="contact.name">
     <header class="header">
 
         <div class="contact-image">
@@ -14,9 +14,9 @@
     </header>
 
     <main class="main">
-        <div class="my-text">
+        <div class="my-text" >
             <div [ngClass]="{'text-contact-dark': talk.type==='dark', 'text-contact-white': talk.type==='white'}"
-             *ngFor="let talk of messages" #talk>
+             *ngFor = "let talk of messages" #talk >
                 <picture *ngIf="talk.type==='dark'">
                     <img src="assets/{{contact.name}}.jpg" alt="{{contact.name}} photo" class="image">
                 </picture>
