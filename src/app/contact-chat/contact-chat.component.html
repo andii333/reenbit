@@ -14,9 +14,9 @@
     </header>
 
     <main class="main">
-        <div class="my-text" >
+        <div class="my-text" #scrollMe [scrollTop]="scrollMe.scrollHeight">
             <div [ngClass]="{'text-contact-dark': talk.type==='dark', 'text-contact-white': talk.type==='white'}"
-             *ngFor = "let talk of messages" >
+             *ngFor = "let talk of messages" #messag>
                 <picture *ngIf="talk.type==='dark'">
                     <img src="assets/{{contact.name}}.jpg" alt="{{contact.name}} photo" class="image">
                 </picture>
@@ -34,7 +34,7 @@
     <footer class="footer">
         <div class="message-field">
             <textarea type="text" rows="1" class="input" placeholder="Type your message"
-                [(ngModel)]="message"></textarea>
+                [(ngModel)]="message" ></textarea>
             <button class="button" (click)="send()"></button>
         </div>
     </footer>

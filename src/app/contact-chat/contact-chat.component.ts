@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterContentChecked, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { delay } from 'rxjs';
 import { Contact } from '../contact';
 import { ContactsService } from '../contacts.service';
@@ -10,7 +10,7 @@ import { Message } from './messages';
   templateUrl: './contact-chat.component.html',
   styleUrls: ['./contact-chat.component.css']
 })
-export class ContactChatComponent implements OnInit {
+export class ContactChatComponent implements OnInit, AfterContentChecked {
 
   contact: Contact;
   messages: Message[] = [];
@@ -19,6 +19,7 @@ export class ContactChatComponent implements OnInit {
 
   constructor(public service: ContactsService,
     public functions: FunctionsService,
+    private cdref: ChangeDetectorRef
   ) { }
 
   ngOnInit(): void {
@@ -32,6 +33,10 @@ export class ContactChatComponent implements OnInit {
       }
     }
     )
+  }
+  
+  ngAfterContentChecked() {
+    this.cdref.detectChanges();
   }
 
   send() {
